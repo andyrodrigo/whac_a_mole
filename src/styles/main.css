@@ -47,3 +47,83 @@
 .menu-score h2:nth-child(2) {
   margin-top: 10px;
 }
+
+/*Comecou*/
+
+body {
+  background-color: #fff;
+  /* cursor: url(../images/miracursor.png), default; */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #000;
+  padding: 30px 30px 10px 30px;
+  color: white;
+}
+
+.menu-opcao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#tela-inicio {
+  width: 100%;
+  height: 100%;
+  border: #ff0000 solid 5px;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#predio {
+  display: none;
+  border: solid red 1px;
+  margin: 50px 20px;
+  padding: 20px;
+}
+
+.linha-janela {
+  border: solid blue 1px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.janela {
+  border: solid green 5px;
+  width: 30%;
+  max-width: 100px;
+  height: 100px;
+}
+
+.inimigo {
+  background-color: #ff0000;
+}
+
+#tela-fim {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}

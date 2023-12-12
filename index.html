@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="./src/styles/main.css" />
   </head>
   <body>
-    <main class="container">
-      <div class="menu">
+    <main>
+      <!-- <div class="menu">
         <div class="menu-time">
           <h2 style="color: red">Time Left</h2>
           <h2 id="timeLeft">60</h2>
@@ -32,7 +32,53 @@
           <img src="./src/images/mario.png" alt="vida" />
           <h2>x3</h2>
         </div>
+      </div> -->
+
+      <header>
+        <div class="menu-opcao">
+          <h2 style="color: red">Tempo</h2>
+          <h2 id="tempoRestante">60</h2>
+        </div>
+        <div class="menu-opcao">
+          <h2 style="color: red">Pontos</h2>
+          <h2 id="pontos">000</h2>
+        </div>
+        <div class="menu-opcao">
+          <h2 style="color: red">Vida</h2>
+          <h2 id="vidas">5</h2>
+        </div>
+      </header>
+
+      <div id="tela-inicio">
+        <button onclick="iniciar()">Iniciar</button>
+        <h3>Maior Pontuação: <span id="recorde">0</span></h3>
       </div>
+
+      <div id="predio">
+        <div class="linha-janela">
+          <div id="0" class="janela"></div>
+          <div id="1" class="janela"></div>
+          <div id="2" class="janela"></div>
+        </div>
+        <div class="linha-janela">
+          <div id="3" class="janela"></div>
+          <div id="4" class="janela"></div>
+          <div id="5" class="janela"></div>
+        </div>
+        <div class="linha-janela">
+          <div id="6" class="janela"></div>
+          <div id="7" class="janela"></div>
+          <div id="8" class="janela"></div>
+        </div>
+        <div class="linha-janela">
+          <div id="9" class="janela"></div>
+          <div id="10" class="janela"></div>
+          <div id="11" class="janela"></div>
+        </div>
+        <div class="linha-janela"></div>
+        <div class="linha-janela"></div>
+      </div>
+      <!-- 
       <div class="panel">
         <div class="panel-row">
           <div class="square" id="1"></div>
@@ -41,17 +87,26 @@
         </div>
         <div class="panel-row">
           <div class="square" id="4"></div>
-          <div class="square enemy" id="5"></div>
+          <div class="square" id="5"></div>
           <div class="square" id="6"></div>
         </div>
         <div class="panel-row">
           <div class="square" id="7"></div>
           <div class="square" id="8"></div>
           <div class="square" id="9"></div>
-        </div>
+        </div> 
+      </div>-->
+
+      <div id="tela-fim">
+        <h2>Fim de Jogo</h2>
+        <h3>Pontuação: <span id="pontuacao">0</span></h3>
+        <h3>Maior Pontuação: <span id="recorde">0</span></h3>
+        <button onclick="reiniciar()">Tentar Novamente</button>
       </div>
     </main>
 
-    <script defer src="./src/scripts/engine.js"></script>
+    <script defer src="./src/scripts/motor.js"></script>
+
+    <!-- <script defer src="./src/scripts/engine.js"></script> -->
   </body>
 </html>

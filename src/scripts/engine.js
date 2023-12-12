@@ -59,4 +59,4 @@ function initialize() {
   addListenerHitBox();
 }
 
-initialize();
+//initialize();
