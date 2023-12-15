@@ -63,10 +63,11 @@ function reproduzirSom(som) {
 }
 
 function piscarTela() {
-  document.body.style.backgroundColor = "red";
-  setTimeout(() => {
-    document.body.style.backgroundColor = "";
-  }, 250);
+  // console.log('piscou')
+  // estado.vista.janelas.style.background = "red";
+  // setTimeout(() => {
+  //   estado.vista.janelas.style.background= "#43413F";
+  // }, 250);
 }
 
 function selecionarAleatoria() {

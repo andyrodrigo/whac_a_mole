@@ -1,10 +1,3 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  /*background-image: url("../images/#000000");*/
-}
-
 .menu {
   display: flex;
   justify-content: space-evenly;
@@ -16,53 +9,23 @@
   border-bottom: 5px solid gold;
 }
 
-.panel {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ff0000;
-}
-
-.square {
-  height: 150px;
-  width: 150px;
-  border: 1px solid #000000;
-  background-color: #7fffd4;
-}
-
-.enemy {
-  background-color: #ff0000;
-  /*background-size: cover;
-  background-image: url("../images/#000000");*/
-}
-
-.menu-lives {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.menu-time h2:nth-child(2),
-.menu-score h2:nth-child(2) {
-  margin-top: 10px;
-}
-
-/*Comecou*/
-
 body {
-  background-color: #fff;
-  /* cursor: url(../images/miracursor.png), default; */
+  background-image: url('../images/fundo.png');
+  background-size: cover;
+  cursor: url(../images/miracursor.png), default;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100vh;
+  width: 100%;
 }
 
 header {
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
@@ -91,28 +54,39 @@ header {
 
 #predio {
   display: none;
-  border: solid red 1px;
-  margin: 50px 20px;
+  margin: 50px 20px 0 20px; 
   padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  min-width: 350px;
+  background-image: url("../images/parede.jpg");
 }
 
 .linha-janela {
-  border: solid blue 1px;
   padding: 10px;
   display: flex;
+  min-height: 50px;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .janela {
-  border: solid green 5px;
+  border: solid #766F67 5px;
   width: 30%;
   max-width: 100px;
   height: 100px;
+  /* background:antiquewhite; */
+  background: #43413F;
+  background-image: url("../images/janela.png");
+  background-size: cover;
+  box-shadow: 3px 3px 10px;
+  /* box-shadow: inset 2px 5px 10px; */
 }
 
 .inimigo {
-  background-color: #ff0000;
+  /* background-color: #ff0000; */
+  background-image: url('../images/inimigo.png');
+  background-size: cover;
 }
 
 #tela-fim {
