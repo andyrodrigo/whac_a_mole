@@ -8,14 +8,16 @@ const estado = {
     vidas: document.querySelector("#vidas"),
     telaFinal: document.querySelector("#tela-fim"),
     recorde: document.querySelector("#recorde"),
+    recorde2: document.querySelector("#recorde2"),
     pontuacao: document.querySelector("#pontuacao"),
+    telaSangue: document.getElementById('tela-sangue'),
   },
   valores: {
     inimigos: [],
     numInimigos: 1,
     tempoAtual: 60,
     pontosAtuais: 0,
-    vidasAtuais: 5,
+    vidasAtuais: 3,
     pontosRecorde: 0,
   },
   acoes: {
@@ -38,7 +40,7 @@ function encerrarJogo() {
   estado.acoes.iniciado = false;
   clearInterval(estado.acoes.tempo);
   clearInterval(estado.acoes.gerarInimigos);
-  estado.vista.telaFinal.style.display = "block";
+  estado.vista.telaFinal.style.display = "flex";
   estado.vista.pontuacao.innerHTML = estado.valores.pontosAtuais;
   gravarRecorde();
 }
@@ -51,23 +53,22 @@ function gravarRecorde() {
       JSON.stringify(estado.valores.pontosRecorde)
     );
   }
-  estado.vista.recorde.textContent = estado.valores.pontosRecorde;
+  estado.vista.recorde.innerHTML = estado.valores.pontosRecorde;
+  estado.vista.recorde2.innerHTML = estado.valores.pontosRecorde;
 }
 
 function reproduzirSom(som) {
-  console.log(som);
-  const audio = new Audio(`./src/audio/${som}.wav`);
+  const audio = new Audio(`./src/audio/${som}`);
   try {
     audio.play();
   } catch {}
 }
 
 function piscarTela() {
-  // console.log('piscou')
-  // estado.vista.janelas.style.background = "red";
-  // setTimeout(() => {
-  //   estado.vista.janelas.style.background= "#43413F";
-  // }, 250);
+  estado.vista.telaSangue.style.display = "block";
+   setTimeout(() => {
+     estado.vista.telaSangue.style.display = "none";
+   }, 150);
 }
 
 function selecionarAleatoria() {
@@ -82,7 +83,6 @@ function selecionarAleatoria() {
       let janelaAleatoria = estado.vista.janelas[numeroAleatorio];
       janelaAleatoria.classList.add("inimigo");
       estado.valores.inimigos.push(numeroAleatorio);
-      //console.log(estado.valores.inimigos);
       setTimeout(() => temporizarTiroInimigo(numeroAleatorio), 2000);
     }
   }
@@ -90,12 +90,11 @@ function selecionarAleatoria() {
 
 function temporizarTiroInimigo(id) {
   if (estado.valores.inimigos.includes(id)) {
-    //console.log("levou tiro de " + id);
-    reproduzirSom("erro");
+    reproduzirSom("tiro.m4a");
     piscarTela();
     const vida = (estado.valores.vidasAtuais -= 1);
     estado.vista.vidas.textContent = vida;
-    if (vida <= 8) {
+    if (vida <= 0) {
       encerrarJogo();
     } else {
       const janela = estado.vista.janelas[id];
@@ -111,7 +110,6 @@ function retirarInimigo(janela) {
   if (indice !== -1) {
     estado.valores.inimigos.splice(indice, 1);
   }
-  //console.log(estado.valores.inimigos);
 }
 
 function aumentarInimigos() {
@@ -126,8 +124,7 @@ function atirarNaJanela() {
   estado.vista.janelas.forEach((janela) => {
     janela.addEventListener("mousedown", () => {
       if (janela.classList.contains("inimigo") && estado.acoes.iniciado) {
-        //console.log("acertou");
-        reproduzirSom("acerto");
+        reproduzirSom("tiroRapido.m4a");
         retirarInimigo(janela);
         estado.valores.pontosAtuais += 10;
         estado.vista.pontos.textContent = estado.valores.pontosAtuais;
@@ -162,7 +159,7 @@ function iniciar() {
 function reiniciar() {
   limparInimigos();
   estado.valores.pontosAtuais = 0;
-  estado.valores.vidasAtuais = 5;
+  estado.valores.vidasAtuais = 3;
   estado.valores.tempoAtual = 60;
 
   estado.vista.pontos.textContent = estado.valores.pontosAtuais;

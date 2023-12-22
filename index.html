@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detona Ralph</title>
+    <title>Zona de Guerra</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,21 +19,6 @@
   </head>
   <body>
     <main>
-      <!-- <div class="menu">
-        <div class="menu-time">
-          <h2 style="color: red">Time Left</h2>
-          <h2 id="timeLeft">60</h2>
-        </div>
-        <div class="menu-score">
-          <h2 style="color: red">Your Score</h2>
-          <h2 id="score">0</h2>
-        </div>
-        <div class="menu-lives">
-          <img src="./src/images/mario.png" alt="vida" />
-          <h2>x3</h2>
-        </div>
-      </div> -->
-
       <header>
         <div class="menu-opcao">
           <h2 style="color: red">Tempo</h2>
@@ -45,13 +30,17 @@
         </div>
         <div class="menu-opcao">
           <h2 style="color: red">Vida</h2>
-          <h2 id="vidas">5</h2>
+          <h2 id="vidas">3</h2>
         </div>
       </header>
 
+      <div id="tela-sangue">TESTE</div>
+
       <div id="tela-inicio">
-        <button onclick="iniciar()">Iniciar</button>
-        <h3>Maior Pontuação: <span id="recorde">0</span></h3>
+        <h1 id="titulo">Zona de Guerra</h1>
+        <img id="sniper" src="./src/images/sniper.png" alt="">
+        <button id="button-iniciar" onclick="iniciar()">Iniciar</button>
+        <h2 id="texto-pontuacao">Maior Pontuação: <span id="recorde">0</span></h3>
       </div>
 
       <div id="predio">
@@ -78,35 +67,15 @@
         <div class="linha-janela"></div>
         <div class="linha-janela"></div>
       </div>
-      <!-- 
-      <div class="panel">
-        <div class="panel-row">
-          <div class="square" id="1"></div>
-          <div class="square" id="2"></div>
-          <div class="square" id="3"></div>
-        </div>
-        <div class="panel-row">
-          <div class="square" id="4"></div>
-          <div class="square" id="5"></div>
-          <div class="square" id="6"></div>
-        </div>
-        <div class="panel-row">
-          <div class="square" id="7"></div>
-          <div class="square" id="8"></div>
-          <div class="square" id="9"></div>
-        </div> 
-      </div>-->
 
       <div id="tela-fim">
-        <h2>Fim de Jogo</h2>
-        <h3>Pontuação: <span id="pontuacao">0</span></h3>
-        <h3>Maior Pontuação: <span id="recorde">0</span></h3>
-        <button onclick="reiniciar()">Tentar Novamente</button>
+        <h2 class="texto-fim">FIM DE JOGO</h2>
+        <h2 class="texto-fim">Pontuação: <span id="pontuacao">0</span></h2>
+        <h2 class="texto-fim">Maior Pontuação: <span id="recorde2">0</span></h2>
+        <button id="button-reiniciar" class="texto-fim" onclick="reiniciar()">Tentar Novamente</button>
       </div>
     </main>
 
     <script defer src="./src/scripts/motor.js"></script>
-
-    <!-- <script defer src="./src/scripts/engine.js"></script> -->
   </body>
 </html>
